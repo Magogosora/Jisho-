@@ -1,0 +1,51 @@
+{
+  "manifest_version": 2,
+  "name": "Jisho+",
+  "version": "1.31",
+  "description": "Extends the online dictionary (JP-EN) jisho.org.",
+  "icons": {
+    "48": "icons/icon.svg",
+    "96": "icons/icon.svg"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://jisho.org/search/*",
+        "*://jisho.org/word/*"
+      ],
+      "js": [
+        "/js/addAudio.js",
+        "/js/addHatsuon.js",
+        "/js/addLinksToDictionaryEntry.js",
+        "/js/addWordsContainingKanjiLink.js",
+        "/js/constants.js",
+        "/js/createDOMElements.js",
+        "/js/JishoDictionaryEntry.js",
+        "/js/main.js",
+        "/js/parseForvo.js",
+        "/js/parseWadoku.js",
+        "/js/parseWeblio.js",
+        "/js/removeWaniKaniLinks.js",
+        "/js/typedefs.js",
+        "/js/upgradeDictionaryEntries.js",
+        "/js/util.js",
+        "/js/HatsuonMaster/hatsuonMaster.js",
+        "/js/Invertex/drawPitchDiagram.js",
+        "/js/Invertex/pitchPatternTable.js",
+        "/js/WanaKana/wanaKana.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": [
+    "*://jisho.org/search/*",
+    "*://jisho.org/word/*",
+    "*://wadoku.de/search/*",
+    "*://www.wadoku.de/search/*",
+    "*://audio00.forvo.com/*",
+    "*://forvo.com/word/*",
+    "*://www.gavo.t.u-tokyo.ac.jp/*",
+    "*://www.weblio.jp/*",
+    "*://assets.languagepod101.com/*"
+  ]
+}

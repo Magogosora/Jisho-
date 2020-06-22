@@ -1,0 +1,5 @@
+ # Ignore files from Visual Studio Code
+ .vscode/
+
+ # Ignore signed addons
+ xpi/
